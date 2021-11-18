@@ -2,7 +2,7 @@
 
 # Getting hotspot information on class memory
 
-#Klass size from Xlog
+## Klass size from Xlog
 - Klass: Represents object metadata information, a VM level representation of a Java class
 - Wildcards aren't being recognized on my machine (`-Xlog:class*=debug)
 - Number of Klass bytes: `-Xlog:class+load=debug`

@@ -2,6 +2,9 @@
 
 # Getting hotspot information on class memory
 
+TODO
+- `jcmd <pid> VM.metapace` does not break down class memory by individual classes, could do the math to approximate additional class sizes though
+
 ## Klass size from Xlog
 - Klass: Represents object metadata information, a VM level representation of a Java class
 - Wildcards aren't being recognized on my machine (`-Xlog:class*=debug)
@@ -13,6 +16,13 @@
 
 ```
 ### Results:
+
+```
+java -version
+openjdk version "17" 2021-09-14
+OpenJDK Runtime Environment Temurin-17+35 (build 17+35)
+OpenJDK 64-Bit Server VM Temurin-17+35 (build 17+35, mixed mode, sharing)
+```
 
 1-single-static: klass bytes = 288
 

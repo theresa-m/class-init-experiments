@@ -2,9 +2,6 @@
 
 # Getting hotspot information on class memory
 
-TODO
-- `jcmd <pid> VM.metapace` does not break down class memory by individual classes, could do the math to approximate additional class sizes though
-
 ## Klass size from Xlog
 - Klass: Represents object metadata information, a VM level representation of a Java class
 - Wildcards aren't being recognized on my machine (`-Xlog:class*=debug)
@@ -15,7 +12,7 @@ TODO
 [0.042s][debug][class,load]  klass: 0x0000000800c00a08 super: 0x0000000800000d68 loader: [loader data: 0x00006000002a0dc0 for instance a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x00000007ffb56908}] bytes: 288 checksum: 49d50d31
 
 ```
-### Results:
+### Results
 
 ```
 java -version
@@ -33,3 +30,9 @@ OpenJDK 64-Bit Server VM Temurin-17+35 (build 17+35, mixed mode, sharing)
 4-two-static-two-clinit
   TwoStaticTwoClinit klass bytes = 396
   TwoStaticTwoClinit$Helper klass bytes = 472
+  
+  
+## JCMD class stats
+- https://github.com/adinn/fosdem2018
+- Run jvm with `-XX:+UnlockDiagnosticVMOptions`
+- `jcmd <pid> GC.class_stats > stats.txt`

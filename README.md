@@ -35,4 +35,5 @@ OpenJDK 64-Bit Server VM Temurin-17+35 (build 17+35, mixed mode, sharing)
 ## JCMD class stats
 - https://github.com/adinn/fosdem2018
 - Run jvm with `-XX:+UnlockDiagnosticVMOptions`
-- `jcmd <pid> GC.class_stats > stats.txt`
+- `jcmd <pid> GC.class_stats > stats.txt` this option is not available on Java 17
+- `jcmd <pid> GC.class_histogram` shows instance memory that has been allocated for each class

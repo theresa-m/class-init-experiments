@@ -3,6 +3,7 @@
 # Getting hotspot information on class memory
 
 ## Klass size from Xlog
+*note: this klass value is actually the length of ClassFileStream data
 - Klass: Represents object metadata information, a VM level representation of a Java class
 - Wildcards aren't being recognized on my machine (`-Xlog:class*=debug)
 - Number of Klass bytes: `-Xlog:class+load=debug`
@@ -35,5 +36,5 @@ OpenJDK 64-Bit Server VM Temurin-17+35 (build 17+35, mixed mode, sharing)
 ## JCMD class stats
 - https://github.com/adinn/fosdem2018
 - Run jvm with `-XX:+UnlockDiagnosticVMOptions`
-- `jcmd <pid> GC.class_stats > stats.txt` this option is not available on Java 17
+- `jcmd <pid> GC.class_stats > stats.txt` this option was deprecated (Java 14) and removed (Java 15)
 - `jcmd <pid> GC.class_histogram` shows instance memory that has been allocated for each class

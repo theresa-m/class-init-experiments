@@ -2,6 +2,10 @@
 
 # Getting hotspot information on class memory
 
+## Added prints to -Xlog:class+init to approximate klass size
+jdk modifications: https://github.com/openjdk/jdk/compare/master...theresa-m:class-init
+
+
 ## Klass size from Xlog
 *note: this klass value is actually the length of ClassFileStream data
 - Klass: Represents object metadata information, a VM level representation of a Java class

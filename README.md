@@ -5,6 +5,13 @@
 ## Added prints to -Xlog:class+init to approximate klass size
 jdk modifications: https://github.com/openjdk/jdk/compare/master...theresa-m:class-init
 
+1-single-static - class with one static field
+- SingleStatic: 1714 bytes
+2-two-static - class with two static fields
+- TwoStatic: 1781 bytes
+3-two-static-two-clinit - class with one static field and an inner class with a static field
+- TwoStaticTwoClinit: 1773 bytes
+- IODHHelper: 1864 bytes
 
 ## Klass size from Xlog
 *note: this klass value is actually the length of ClassFileStream data
@@ -30,9 +37,7 @@ OpenJDK 64-Bit Server VM Temurin-17+35 (build 17+35, mixed mode, sharing)
 
 2-two-static: klass bytes = 324 _(36 extra from 1)_
 
-3-three-static: klass bytes = 369 _(45 extra from 2)_
-
-4-two-static-two-clinit
+3-two-static-two-clinit
   TwoStaticTwoClinit klass bytes = 396
   TwoStaticTwoClinit$Helper klass bytes = 472
   

@@ -1,6 +1,6 @@
 class TwoStaticTwoClinit {
 	static int staticField1 = 1;
-	class Helper {
+	class IODHHelper {
 		static int staticField2 = 2;
 	}
 }

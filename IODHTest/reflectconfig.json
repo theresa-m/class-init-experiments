@@ -1,0 +1,8 @@
+[
+{
+    "name" : "java.io.FileDescriptor",
+    "fields" : [
+      { "name" : "otherParents" }
+    ]
+  }
+]

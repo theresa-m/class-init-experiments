@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
 
@@ -11,40 +10,26 @@ import java.util.HashMap;
  *
 
  --add-opens=java.base/java.io=ALL-UNNAMED \
+ --initialize-at-build-time=FileDescriptorOtherParentsTest \
+ -H:ReflectionConfigurationFiles=/Users/theresamammarella/github/class-init-experiments/IODHTest/reflectconfig.json \
 
   /usr/bin/python3 ~/github/mx/mx.py native-image \
+        --initialize-at-build-time=URLClassPathTest \
+        -H:ReflectionConfigurationFiles=/Users/theresamammarella/github/class-init-experiments/IODHTest/reflectconfig.json \
             -cp ~/github/class-init-experiments/IODHTest \
-           --initialize-at-build-time=FileDescriptorOtherParentsTest \
-           -H:ReflectionConfigurationFiles=/Users/theresamammarella/github/class-init-experiments/IODHTest/reflectconfig.json \
+            --add-opens=java.base/java.net=ALL-UNNAMED \
            IODHTest
  */
 public class IODHTest {
+    URLClassPathTest mer = new URLClassPathTest();
 
     public static void main(String[] args) throws Throwable {
-        FileDescriptorOtherParentsTest.testJavaIoFileDescriptor();
+        //FileDescriptorOtherParentsTest.testJavaIoFileDescriptor();
 
-        //testJavaNetURLClassLoader();
+        //URLClassPathTest.testURLClassPath();
+        
         //testJavaUtilMaps();
     }
-
-    // TODO relation to URLClassPath
-//    private static void testJavaNetURLClassLoader() throws Throwable {
-//        URL[] urls = new URL[]{
-//                new File("test1.jar").toURI().toURL(),
-//                new File("test2.jar").toURI().toURL()
-//        };
-//
-//        URLClassLoader urlcl = new URLClassLoader(urls);
-//        URL url1 = urlcl.findResource("test1.txt");
-//        URL url2 = urlcl.findResource("test2.txt");
-//
-//        if (url1 == null && url2 == null) {
-//            System.out.println("FAIL: urls are null");
-//        } else {
-//            System.out.println(url1.toString());
-//            System.out.println(url2.toString());
-//        }
-//    }
 
     private static void testJavaUtilMaps() {
         HashMap<Integer, Integer> hm = new HashMap<>();

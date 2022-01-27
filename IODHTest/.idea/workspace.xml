@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbff7d61-5c09-4ea5-bc06-9d2dae5721a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FileDescriptorOtherParentsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reflectconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hello.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/URLClassPathTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileDescriptorOtherParentsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/FileDescriptorOtherParentsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IODHTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/IODHTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reflectconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/reflectconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

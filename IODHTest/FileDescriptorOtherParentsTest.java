@@ -19,11 +19,29 @@ public class FileDescriptorOtherParentsTest {
     }
 
     public  static void testJavaIoFileDescriptor() throws Throwable {
-        Field otherParentsField = fd.getClass().getDeclaredField("otherParents");
+        // test before modifications
+//        Field otherParentsField = fd.getClass().getDeclaredField("otherParents");
+        
+        Class fileDescriptorClass = Class.forName("java.io.FileDescriptor");
+        Class runtimeHelperClass = Class.forName("java.io.FileDescriptor$RuntimeHelper");
+
+        /* get RuntimeHelper rh field of FileDescriptor object */
+        Field runtimeHelperField = fileDescriptorClass.getDeclaredField("rh");
+        runtimeHelperField.setAccessible(true);
+        Object runtimeHelperObject = runtimeHelperField.get(fd);
+
+        /* get List otherParents of RuntimeHelper object */
+        Field otherParentsField = runtimeHelperClass.getDeclaredField("otherParents");
         otherParentsField.setAccessible(true);
-        Object otherParentsObject = otherParentsField.get(fd);
+        Object otherParentsObject = otherParentsField.get(runtimeHelperObject);
+
+        
         List<Closeable> otherParents = (List<Closeable>)otherParentsObject;
 
-        System.out.println("List size is (should be 0): " + otherParents.size());
+        if (otherParents == null) {
+            System.out.println("List should be reset to null");
+        } else {
+            System.out.println("List was not reset: " + otherParents.size());
+        }
     }
 }

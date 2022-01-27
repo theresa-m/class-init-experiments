@@ -1,8 +1,20 @@
 [
-{
-    "name" : "java.io.FileDescriptor",
+  {
+    "name" : "java.net.URLClassLoader",
     "fields" : [
-      { "name" : "otherParents" }
+      { "name" : "ucp" }
+    ]
+  },
+  {
+    "name" : "jdk.internal.loader.URLClassPath",
+    "fields" : [
+      { "name" : "rh" }
+    ]
+  },
+  {
+    "name" : "jdk.internal.loader.URLClassPath$RuntimeHelper",
+    "fields" : [
+      { "name" : "path" }
     ]
   }
 ]

@@ -11,7 +11,7 @@ public class URLClassPathTest {
 
     static URLClassLoader ucl;
     static {
-       // System.out.println("run clinit");
+        System.out.println("run clinit");
 //        try {
 //            URL[] urls = new URL[]{
 //                    new File("test1.jar").toURI().toURL(),

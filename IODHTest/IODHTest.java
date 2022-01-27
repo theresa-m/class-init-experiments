@@ -21,7 +21,7 @@ import java.util.HashMap;
            IODHTest
  */
 public class IODHTest {
-    URLClassPathTest mer = new URLClassPathTest();
+    static URLClassPathTest mer = new URLClassPathTest();
 
     public static void main(String[] args) throws Throwable {
         //FileDescriptorOtherParentsTest.testJavaIoFileDescriptor();

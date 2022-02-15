@@ -25,11 +25,13 @@ public class IODHTest {
 
     public static void main(String[] args) throws Throwable {
         //FileDescriptorOtherParentsTest.testJavaIoFileDescriptor();
-
         //URLClassPathTest.testURLClassPath();
-        
         //testJavaUtilMaps();
+
+        CurrencyTest.currencyTest();
     }
+
+
 
     private static void testJavaUtilMaps() {
         HashMap<Integer, Integer> hm = new HashMap<>();

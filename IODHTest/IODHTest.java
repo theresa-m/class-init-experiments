@@ -25,10 +25,9 @@ public class IODHTest {
 
     public static void main(String[] args) throws Throwable {
         //FileDescriptorOtherParentsTest.testJavaIoFileDescriptor();
-        //URLClassPathTest.testURLClassPath();
+        URLClassPathTest.testURLClassPath();
         //testJavaUtilMaps();
-
-        CurrencyTest.currencyTest();
+        //CurrencyTest.currencyTest();
     }
 
 

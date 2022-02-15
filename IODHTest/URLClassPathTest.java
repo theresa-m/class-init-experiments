@@ -12,12 +12,12 @@ public class URLClassPathTest {
     static URLClassLoader ucl;
     static {
         System.out.println("run clinit");
-//        try {
-//            URL[] urls = new URL[]{
-//                    new File("test1.jar").toURI().toURL(),
-//                    new File("test2.jar").toURI().toURL()
-//            };
-//            ucl = new URLClassLoader(urls);
+        try {
+            URL[] urls = new URL[]{
+                    new File("test1.jar").toURI().toURL(),
+                    new File("test2.jar").toURI().toURL()
+            };
+            ucl = new URLClassLoader(urls);
 //
 //            Class urlClassLoaderClass = Class.forName("java.net.URLClassLoader");
 //            Class urlClassPathClass = Class.forName("jdk.internal.loader.URLClassPath");
@@ -43,10 +43,10 @@ public class URLClassPathTest {
 //            for (Object o : pathArray) {
 //                System.out.println(o.hashCode());
 //            }
-//        } catch (Throwable e) {
-//            System.out.println("Exception while initializing" + e.getMessage());
-//            throw new RuntimeException(e.getMessage());
-//        }
+        } catch (Throwable e) {
+            System.out.println("Exception while initializing" + e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     /*

@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.util.Currency;
 import java.util.HashMap;
 
 /**
@@ -21,13 +22,26 @@ import java.util.HashMap;
            IODHTest
  */
 public class IODHTest {
-    static URLClassPathTest mer = new URLClassPathTest();
+    //static URLClassPathTest test = new URLClassPathTest();
 
     public static void main(String[] args) throws Throwable {
+        testCurrencyEquals();
+
         //FileDescriptorOtherParentsTest.testJavaIoFileDescriptor();
-        URLClassPathTest.testURLClassPath();
+        //URLClassPathTest.testURLClassPath();
         //testJavaUtilMaps();
-        //CurrencyTest.currencyTest();
+    }
+
+    /* run with:
+        --initialize-at-build-time=CurrencyTestBT
+        --initialize-at-run-time=CurrencyTestRT
+        --initialize-at-run-time=IODHTest
+    */
+    private static void testCurrencyEquals() {
+        Currency cbt = CurrencyTestBT.getCurrency();
+        Currency crt = CurrencyTestRT.getCurrency();
+        System.out.println("Are currencies == ? " + (cbt == crt));
+        System.out.println("Are currencies null? " + ((cbt == null) || (crt == null)));
     }
 
 
